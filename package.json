@@ -1,0 +1,42 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "This is a TODO API built using node.js and express with the use of typescript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "preserve": "npm run build",
+    "serve": "cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon -q dist/index.js\"",
+    "prestart": "npm run build",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeekyGeeky/node-todo-api.git"
+  },
+  "keywords": [
+    "Ts-node",
+    "typescript",
+    "node.js",
+    "express"
+  ],
+  "author": "GeekyGeeky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeekyGeeky/node-todo-api/issues"
+  },
+  "homepage": "https://github.com/GeekyGeeky/node-todo-api#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.4.13",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0"
+  }
+}
